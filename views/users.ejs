@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs') %>
+
+<body>
+  <%- include('includes/navigation.ejs') %>
+
+  <main>
+    <h1>List of Users</h1>
+    <% if (users.length > 0) { %>
+    <table class="user-list">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+      <% for (let user of users) { %>
+      <tr>
+        <td><%= user.fname %></td>
+        <td><%= user.lname %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+      </tr>
+      <% } %>
+    </table>
+    <% } else { %>
+    <h1>No Users Found!</h1>
+    <% } %>
+  </main>
+
+  <%- include('includes/end.ejs') %>
+</body>
